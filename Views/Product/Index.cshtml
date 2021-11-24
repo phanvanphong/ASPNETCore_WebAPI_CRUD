@@ -1,0 +1,40 @@
+﻿@model List<TestAPIvsJWT.ViewModel.ProductViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+<div class="container">
+    <h2>Table Product</h2>
+    <p>Create product: <a class="btn btn-warning" asp-controller="Product" asp-action="Create">Insert</a> </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Color</th>
+                <th>Price</th>
+                <th>Number</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Category</td>
+                    <td>@item.Color</td>
+                    <td>@item.UnitPrice</td>
+                    <td>@item.AvailableQuantity</td>
+                    <td>
+                        <a class="btn btn-primary" asp-controller="Product" asp-action="Edit" asp-route-Id="@item.Id">Edit</a>
+                        <a class="btn btn-danger" asp-controller="Product" asp-action="Delete" asp-route-Id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

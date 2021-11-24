@@ -1,0 +1,34 @@
+﻿@model TestAPIvsJWT.Models.Product
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <h2>Create Product</h2>
+    <form action="Create" method="post">
+        <div class="form-group">
+            <label for="">Name: </label>
+            <input asp-for="Name" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="">Category: </label>
+            <input asp-for="Category" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="">Color: </label>
+            <input asp-for="Color" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="">Price: </label>
+            <input asp-for="UnitPrice" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="">Number: </label>
+            <input asp-for="AvailableQuantity" type="text" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
